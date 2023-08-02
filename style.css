@@ -2,7 +2,7 @@
 body {
     font-family: 'Libre Franklin', sans-serif;
 }
-#form-login{
+#qa-login-plugin{
     background: #fff;
     width: 100%;
     min-height: 70vh;
@@ -25,19 +25,17 @@ body {
     opacity: 1;
     transition: transform 750ms ease-out 0s;
 }
-
-.des a {
+#qa-login-plugin .des a {
     color: #111;
 }
-
-.des {
-    color: rgb(0, 0, 0);
+#qa-login-plugin .des {
+    color: black;
     font-size: 14px;
     line-height: 21px;
     text-align: center;
     margin-top: 20px;
 }
-.form-body {
+#qa-login-plugin .form-body {
     height: 100%;
     max-width: 450px;
     position: relative;
@@ -46,10 +44,8 @@ body {
     padding: 0px;
     margin: 0px auto;
     flex: 0 0 auto;
-
 }
-
-.form-submit {
+#qa-login-plugin .form-submit {
     margin-top: 15px;
     display: flex;
     width: 100%;
@@ -61,14 +57,14 @@ body {
     font-size: 1em;
     font-weight: 700;
     cursor: pointer;
-    border: 0.0625em solid rgb(18, 18, 18);
+    border: 0.0625em solid #121212;
     border-radius: 3px;
     box-sizing: border-box;
     user-select: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     background-image: none;
-    color: rgb(255, 255, 255);
-    background-color: rgb(18, 18, 18);
+    color: white;
+    background-color: #121212;
     transition: all 0.15s ease-in 0s;
     justify-content: center;
     align-items: center;
@@ -76,36 +72,34 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-.forgot-pass a {
+#qa-login-plugin .forgot-pass a {
     color: #111;
     font-size: 14px;
 }
-
-.form-item {
+#qa-login-plugin .form-item {
     margin-bottom: 20px;
 }
-.f-title {
+#qa-login-plugin .f-title {
     font-size: 24px;
     padding: 0px 0px 12px;
     line-height: 26px;
     font-weight: 500;
     text-align: center;
     margin: 0px auto;
-    color: rgb(18, 18, 18);
+    color: #121212;
 }
-.form-item label{
-    color: rgb(0, 0, 0);
+#qa-login-plugin .form-item label {
+    color: black;
     font-size: 14px;
     font-weight: 600;
     line-height: 21px;
     display: block;
     margin-bottom: 5px;
 }
-.form-item input {
+#qa-login-plugin .form-item input {
     margin: 0px;
     padding: 0px;
-    border: 1px solid rgb(136, 136, 136);
+    border: 1px solid #888;
     border-radius: 3px;
     box-sizing: border-box;
     transition: border-color 0.15s ease-in 0s;
@@ -115,10 +109,10 @@ body {
     height: 44px;
     padding: 10px;
 }
-.btn-ring{
+#qa-login-plugin .btn-ring {
     display: none;
 }
-.btn-ring:after {
+#qa-login-plugin .btn-ring:after {
     content: "";
     display: block;
     width: 10px;
@@ -129,6 +123,7 @@ body {
     border-color: #fff transparent #fff transparent;
     animation: ring 1.2s linear infinite;
 }
+
 @keyframes ring {
     0% {
         transform: rotate(0deg);
