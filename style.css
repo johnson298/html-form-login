@@ -25,6 +25,14 @@ body {
     opacity: 1;
     transition: transform 750ms ease-out 0s;
 }
+@keyframes ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 #qa-login-plugin .des a {
     color: #111;
 }
@@ -79,9 +87,9 @@ body {
 #qa-login-plugin .form-item {
     margin-bottom: 20px;
 }
-#qa-login-plugin .f-title {
+#qa-login-plugin #f-title {
     font-size: 24px;
-    padding: 0px 0px 12px;
+    padding: 0px 0px 20px;
     line-height: 26px;
     font-weight: 500;
     text-align: center;
@@ -99,7 +107,7 @@ body {
 #qa-login-plugin .form-item input {
     margin: 0px;
     padding: 0px;
-    border: 1px solid #888;
+    /* border: 1px solid #888; */
     border-radius: 3px;
     box-sizing: border-box;
     transition: border-color 0.15s ease-in 0s;
@@ -123,12 +131,70 @@ body {
     border-color: #fff transparent #fff transparent;
     animation: ring 1.2s linear infinite;
 }
-
-@keyframes ring {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+#qa-login-plugin #f-sub-title {
+    margin-bottom: 28px;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    color: #121212;
+}
+#qa-login-plugin .form-input {
+    display: flex;
+}
+#qa-login-plugin .form-input input {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-right: none !important;
+}
+#qa-login-plugin .form-input .f-edit {
+    border: none;
+}
+#qa-login-plugin .form-input {
+    display: flex;
+    border: 1px solid #888;
+}
+#qa-login-plugin .form-input input {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border: none;
+}
+#qa-login-plugin .form-input .f-edit {
+    border: none;
+    color: black;
+    transition: all 0.1s ease-in-out 0s;
+    margin: 0px;
+    padding: 0px;
+    height: 2.75rem;
+    float: right;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    width: 56px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border: 0px;
+    cursor: pointer;
+    white-space: nowrap;
+    z-index: 100;
+    color: black;
+    background-color: white;
+    transition: all 0.15s ease-in 0s;
+}
+#qa-login-plugin .form-input .f-edit:hover {
+    background-color: #f7f7f7;
+}
+#qa-login-plugin input:disabled {
+    cursor: no-drop;
+    background-color: white !important;
+    color: #767676 !important;
+}
+#qa-login-plugin #qa-form-email.isDisabled {
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid #888;
+    border-radius: 3px;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease-in 0s;
+    outline: none;
+    opacity: 0.4;
 }

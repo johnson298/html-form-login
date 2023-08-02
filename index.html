@@ -10,24 +10,32 @@
 <body>
 <div id="qa-login-plugin" style="display: none;">
     <div class="form-body">
-        <h2 class="f-title">Create a password</h2>
-        <form id="form-action-login" action="">
+        <h2 id="f-title">Create a free account, or log in.</h2>
+        <div id="f-sub-title">Gain access to limited free articles, news alerts, select newsletters, podcasts and some daily games.</div>
+        <form id="form-action-login">
             <div class="form-item">
                 <label for="form_email">Email Address</label>
-                <input id="form_email" type="email">
+                <div id="qa-form-email" class="form-input">
+                    <input id="form_email" type="email" required>
+                    <button id="qa-edit-email" type="button" class="f-edit" style="display: none;">Edit</button>
+                </div>
             </div>
-            <div class="form-item">
+            <div class="form-item" id="qa-password" style="display: none;">
                 <label for="form_password">Password</label>
-                <input id="form_password" type="password">
+                <div class="form-input">
+                    <input id="form_password" type="password">
+                    <button type="button" class="f-edit">Show</button>
+                </div>
             </div>
-            <div class="form-item">
-                <label for="form_date">Birth day</label>
+            <div class="form-item" id="qa-birthday" style="display: none;">
+                <label for="form_date">Birthday</label>
                 <input id="form_date" type="date">
             </div>
             <div class="forgot-pass">
                 <a href="">Forgot your password?</a>
             </div>
-            <button class="form-submit" type="submit">Log In <span class="btn-ring" style="display: block;"></span></button>
+            <button id="qa-check-email" type="button" class="form-submit">Continue <span class="btn-ring" style="display: block;"></span></button>
+            <button id="qa-submit" class="form-submit" type="submit" style="display: none;">Log In <span class="btn-ring" style="display: block;"></span></button>
 
             <div class="des">This site is protected by reCAPTCHA and the Google <a href="">Privacy Policy</a> and <a href="">Terms of Service</a> apply.</div>
         </form>
@@ -57,8 +65,62 @@
         return null;
     }
 
+    const $showBtn = document.querySelector("#qa-password .f-edit");
+    const $inputPassword = document.getElementById("form_password");
+    const $inputEmail = document.getElementById("form_email");
+
     const $loginAction = document.getElementById('qa-login-plugin')
     const form = document.getElementById("form-action-login");
+    const $qaCheckEmailBtn = document.getElementById("qa-check-email");
+    const $formPassword = document.getElementById("qa-password");
+    const $formBirthday = document.getElementById("qa-birthday");
+    const $editEmail = document.getElementById("qa-edit-email");
+    const $qaFormEmail = document.getElementById("qa-form-email");
+    const $btnSubmit = document.getElementById("qa-submit");
+    const $subTitle = document.getElementById("f-sub-title");
+
+    $showBtn.onclick = () => {
+        if ($inputPassword.type === "password") {
+            $inputPassword.type = "text";
+            $showBtn.textContent = 'Hide'
+        } else {
+            $inputPassword.type = "password";
+            $showBtn.textContent = 'Show'
+        }
+    }
+
+
+    const showHideStep2 = (status) => {
+        $formPassword.style.display = status
+        $formBirthday.style.display = status
+        if(status === 'block'){
+            $inputEmail.setAttribute('disabled', 'true')
+            $editEmail.style.display = 'block'
+            $qaFormEmail.classList.add('isDisabled')
+            $btnSubmit.style.display = 'flex'
+            $qaCheckEmailBtn.style.display = 'none'
+            $subTitle.style.display = 'none'
+            $inputPassword.setAttribute('required', 'true')
+        } else {
+            $inputEmail.removeAttribute('disabled')
+            $editEmail.style.display = 'none'
+            $qaFormEmail.classList.remove('isDisabled')
+            $btnSubmit.style.display = 'none'
+            $qaCheckEmailBtn.style.display = 'flex'
+            $subTitle.style.display = 'block'
+            $inputPassword.removeAttribute('required')
+        }
+    }
+
+    $qaCheckEmailBtn.onclick = () => {
+        const validate = form.reportValidity()
+        if(validate){
+            showHideStep2('block')
+        }
+    }
+    $editEmail.onclick = () => {
+        showHideStep2('none')
+    }
 
     form.addEventListener("submit", (e) => {
         e.preventDefault()
