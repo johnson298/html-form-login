@@ -8,6 +8,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
+<h1 style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempora!</h1>
 <div id="qa-login-plugin" style="display: none;">
     <div class="form-body">
         <h2 id="f-title">Create a free account, or log in.</h2>
@@ -29,7 +53,7 @@
             </div>
             <div class="form-item" id="qa-birthday" style="display: none;">
                 <label for="form_date">Birthday</label>
-                <input id="form_date" type="date">
+                <input id="form_date" type="text">
             </div>
             <div class="forgot-pass">
                 <a href="">Forgot your password?</a>
@@ -134,8 +158,10 @@
         const isLogin = getCookie('login_form_time')
         if(isLogin === 'true') {
             $loginAction.style.display = 'none'
+            document.body.classList.remove('modal-open')
         } else {
             $loginAction.style.display = 'block'
+            document.body.classList.add('modal-open')
         }
     });
 </script>
