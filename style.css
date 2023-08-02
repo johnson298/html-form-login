@@ -24,6 +24,8 @@ body {
     height: auto;
     opacity: 1;
     transition: transform 750ms ease-out 0s;
+    position: fixed;
+    bottom: 0;
 }
 @keyframes ring {
     0% {
