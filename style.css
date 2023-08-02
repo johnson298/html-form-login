@@ -200,6 +200,6 @@ body {
     outline: none;
     opacity: 0.4;
 }
-body.modal-open {
+body.modal-open-login-plugin {
     overflow: hidden;
 }
