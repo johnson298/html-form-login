@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200;300;400;500&display=swap');
+body {
+    font-family: 'Libre Franklin', sans-serif;
+}
+#form-login{
+    background: #fff;
+    width: 100%;
+    min-height: 70vh;
+    transform: translate(0px, -50vh);
+    padding: 20px 25px;
+    will-change: transform;
+    display: flex;
+    top: 100vh;
+    -webkit-box-align: center;
+    align-items: center;
+    border-top: 1px solid rgb(51, 51, 51);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px;
+    box-sizing: border-box;
+    flex-direction: column;
+    margin: 0px auto;
+    position: absolute;
+    text-align: left;
+    z-index: 1000000120;
+    height: auto;
+    opacity: 1;
+    transition: transform 750ms ease-out 0s;
+}
+
+.des a {
+    color: #111;
+}
+
+.des {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    margin-top: 20px;
+}
+.form-body {
+    height: 100%;
+    max-width: 450px;
+    position: relative;
+    font-size: 1em;
+    line-height: normal;
+    padding: 0px;
+    margin: 0px auto;
+    flex: 0 0 auto;
+
+}
+
+.form-submit {
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+    padding: 0px;
+    width: 100%;
+    height: 44px;
+    line-height: 2.375em;
+    font-family: nyt-franklin, helvetica, arial, sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    cursor: pointer;
+    border: 0.0625em solid rgb(18, 18, 18);
+    border-radius: 3px;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background-image: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(18, 18, 18);
+    transition: all 0.15s ease-in 0s;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.forgot-pass a {
+    color: #111;
+    font-size: 14px;
+}
+
+.form-item {
+    margin-bottom: 20px;
+}
+.f-title {
+    font-size: 24px;
+    padding: 0px 0px 12px;
+    line-height: 26px;
+    font-weight: 500;
+    text-align: center;
+    margin: 0px auto;
+    color: rgb(18, 18, 18);
+}
+.form-item label{
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    display: block;
+    margin-bottom: 5px;
+}
+.form-item input {
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid rgb(136, 136, 136);
+    border-radius: 3px;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease-in 0s;
+    outline: none;
+    opacity: 1;
+    width: 100%;
+    height: 44px;
+    padding: 10px;
+}
+.btn-ring{
+    display: none;
+}
+.btn-ring:after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: ring 1.2s linear infinite;
+}
+@keyframes ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

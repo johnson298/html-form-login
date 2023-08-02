@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="form-login" style="display: none;">
+    <div class="form-body">
+        <h2 class="f-title">Create a password</h2>
+        <form id="form-action-login" action="">
+            <div class="form-item">
+                <label for="form_email">Email Address</label>
+                <input id="form_email" type="email">
+            </div>
+            <div class="form-item">
+                <label for="form_password">Password</label>
+                <input id="form_password" type="password">
+            </div>
+            <div class="form-item">
+                <label for="form_date">Birth day</label>
+                <input id="form_date" type="date">
+            </div>
+            <div class="forgot-pass">
+                <a href="">Forgot your password?</a>
+            </div>
+            <button class="form-submit" type="submit">Log In <span class="btn-ring" style="display: block;"></span></button>
+
+            <div class="des">This site is protected by reCAPTCHA and the Google <a href="">Privacy Policy</a> and <a href="">Terms of Service</a> apply.</div>
+        </form>
+    </div>
+
+</div>
+
+<script>
+    function setCookie(name, value, days) {
+        let expires = "";
+        if (days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+        let nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            const c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    const $loginAction = document.getElementById('form-login')
+    const form = document.getElementById("form-action-login");
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault()
+        setCookie('login_form_time', 'true')
+    });
+
+    addEventListener("load", (event) => {
+        const isLogin = getCookie('login_form_time')
+        if(isLogin === 'true') {
+            $loginAction.style.display = 'none'
+        } else {
+            $loginAction.style.display = 'block'
+        }
+    });
+</script>
+</body>
+</html>
