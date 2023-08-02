@@ -67,6 +67,7 @@
 
     const $showBtn = document.querySelector("#qa-password .f-edit");
     const $inputPassword = document.getElementById("form_password");
+    const $inputDate = document.getElementById("form_date");
     const $inputEmail = document.getElementById("form_email");
 
     const $loginAction = document.getElementById('qa-login-plugin')
@@ -101,6 +102,7 @@
             $qaCheckEmailBtn.style.display = 'none'
             $subTitle.style.display = 'none'
             $inputPassword.setAttribute('required', 'true')
+            $inputDate.setAttribute('required', 'true')
         } else {
             $inputEmail.removeAttribute('disabled')
             $editEmail.style.display = 'none'
@@ -109,6 +111,7 @@
             $qaCheckEmailBtn.style.display = 'flex'
             $subTitle.style.display = 'block'
             $inputPassword.removeAttribute('required')
+            $inputDate.removeAttribute('required')
         }
     }
 
