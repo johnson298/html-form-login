@@ -5,12 +5,11 @@ body {
 #qa-login-plugin{
     background: #fff;
     width: 100%;
-    min-height: 70vh;
-    transform: translate(0px, -50vh);
+    min-height: 59vh;
     padding: 20px 25px;
-    will-change: transform;
+    /* will-change: transform; */
     display: flex;
-    top: 100vh;
+    /* top: 100vh; */
     -webkit-box-align: center;
     align-items: center;
     border-top: 1px solid rgb(51, 51, 51);
@@ -18,7 +17,6 @@ body {
     box-sizing: border-box;
     flex-direction: column;
     margin: 0px auto;
-    position: absolute;
     text-align: left;
     z-index: 1000000120;
     height: auto;
@@ -26,6 +24,8 @@ body {
     transition: transform 750ms ease-out 0s;
     position: fixed;
     bottom: 0;
+    /* display: flex; */
+    padding-top: 50px;
 }
 @keyframes ring {
     0% {
