@@ -1,3 +1,4 @@
+<!--https://codepen.io/tutsplus/pen/KMWqRr-->
 <!doctype html>
 <html lang="en">
 <head>
@@ -43,6 +44,7 @@
                     <input id="form_email" type="email" required>
                     <button id="qa-edit-email" type="button" class="f-edit" style="display: none;">Edit</button>
                 </div>
+                <div class="plugin-error-mess"></div>
             </div>
             <div class="form-item" id="qa-password" style="display: none;">
                 <label for="form_password">Password</label>
@@ -50,6 +52,7 @@
                     <input id="form_password" type="password">
                     <button type="button" class="f-edit">Show</button>
                 </div>
+                <div class="plugin-error-mess"></div>
             </div>
             <div class="form-item" id="qa-birthday" style="display: none;">
                 <label for="form_date">Birthday</label>
@@ -156,6 +159,10 @@
         this.value = output;
     });
 
+    const setErrorMess = ($el, mess) => {
+        $el.parentElement.parentElement.querySelector('.plugin-error-mess').textContent = mess
+    }
+
     $showBtn.onclick = () => {
         if ($inputPassword.type === "password") {
             $inputPassword.type = "text";
@@ -203,7 +210,12 @@
 
     form.addEventListener("submit", (e) => {
         e.preventDefault()
-        setCookie('login_form_time', 'true')
+        if($inputPassword.value.length < 6){
+            setErrorMess($inputPassword, 'Mật khẩu tối phải thiểu có 6 kí tự')
+        } else {
+            setErrorMess($inputPassword, '')
+            setCookie('login_form_time', 'true')
+        }
     });
 
     addEventListener("load", (event) => {

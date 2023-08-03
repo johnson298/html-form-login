@@ -203,3 +203,8 @@ body {
 body.modal-open-login-plugin {
     overflow: hidden;
 }
+.plugin-error-mess{
+    color: #ff3131;
+    font-size: 12px;
+    margin-top: 5px;
+}
